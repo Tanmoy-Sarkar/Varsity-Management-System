@@ -22,5 +22,6 @@ urlpatterns = [
     path('signup/',include('users.urls')),
     path('',include('pages.urls')),
     path('',include('django.contrib.auth.urls')),
+    path('class_notice/',include('ClassNotice.urls')),
     
 ]
