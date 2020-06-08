@@ -4,3 +4,5 @@ from .models import ClassNotice
 class ClassNoticeView(ListView):
 	model = ClassNotice
 	template_name = 'class_notice_list.html'
+
+	

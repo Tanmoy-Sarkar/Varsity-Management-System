@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
     'ClassNotice.apps.ClassnoticeConfig',
+    'academicnotice.apps.AcademicnoticeConfig',
+    'schedule.apps.ScheduleConfig',
     #3rd party apps
     'crispy_forms',
     'django.contrib.admin',

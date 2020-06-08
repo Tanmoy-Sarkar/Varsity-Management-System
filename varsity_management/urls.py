@@ -23,5 +23,7 @@ urlpatterns = [
     path('',include('pages.urls')),
     path('',include('django.contrib.auth.urls')),
     path('class_notice/',include('ClassNotice.urls')),
-    
+    path('academic_notice/',include('academicnotice.urls')),
+    path('schedule/',include('schedule.urls')),
+
 ]
