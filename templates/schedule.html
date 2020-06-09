@@ -1,10 +1,89 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Today is {{ day }} day</h1>
-    {% if day == "A" %}
-    <h1>routine</h1>
-    {% else %}
-    <h1>No Routine</h1>
-    {% endif %}
+    <h2 class="text-center">Today is {{ day }} day</h2>
+
+ 	<table class="table table-bordered table-dark table-responsive">
+		<thead>
+		<tr>
+		  <th scope="col">First Period</th>
+		  <th scope="col">Second Period</th>
+		  <th scope="col">Third Period</th>
+		  <th scope="col">Fourth Period</th>
+		  <th scope="col">Fifth Period</th>
+		  <th scope="col">Sixth Period</th>
+		  <th scope="col">Seventh Period</th>
+		  <th scope="col">Eighth Period</th>
+		  <th scope="col">Ninth Period</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			{% if routine.morning_lab %}
+		  <td colspan="3" class="text-center">{{ routine.first_period }}</td>
+		    {% else %}
+		  <td>{{ routine.first_period }}</td>
+		  <td>{{ routine.second_period }}</td>
+		  <td>{{ routine.third_period }}</td>
+		    {% endif %}
+		    {% if routine.after_morning_lab %}
+		  <td colspan="3" class="text-center">{{ routine.fourth_period }}</td>
+		  	{% else %}
+		  <td>{{ routine.fourth_period }}</td>
+		  <td>{{ routine.fifth_period }}</td>
+		  <td>{{ routine.sixth_period }}</td>
+		    {% endif %}
+		    {% if routine.afternoon_lab %}
+		  <td colspan="3" class="text-center">{{ routine.seventh_period }}</td>
+		  	{% else %}
+		  <td>{{ routine.seventh_period }}</td>
+		  <td>{{ routine.eighth_period }}</td>
+		  <td>{{ routine.ninth_period }}</td>
+		    {% endif %}
+		</tr>
+		</tbody>
+	</table>
+	{% for routine in remaining_routine %}
+	<h2>{{ routine.day }} Day</h2>
+	<table class="table table-bordered table-dark table-responsive">
+		<thead>
+		<tr>
+		  <th scope="col">First Period</th>
+		  <th scope="col">Second Period</th>
+		  <th scope="col">Third Period</th>
+		  <th scope="col">Fourth Period</th>
+		  <th scope="col">Fifth Period</th>
+		  <th scope="col">Sixth Period</th>
+		  <th scope="col">Seventh Period</th>
+		  <th scope="col">Eighth Period</th>
+		  <th scope="col">Ninth Period</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			{% if routine.morning_lab %}
+		  <td colspan="3" class="text-center">{{ routine.first_period }}</td>
+		    {% else %}
+		  <td>{{ routine.first_period }}</td>
+		  <td>{{ routine.second_period }}</td>
+		  <td>{{ routine.third_period }}</td>
+		    {% endif %}
+		    {% if routine.after_morning_lab %}
+		  <td colspan="3" class="text-center">{{ routine.fourth_period }}</td>
+		  	{% else %}
+		  <td>{{ routine.fourth_period }}</td>
+		  <td>{{ routine.fifth_period }}</td>
+		  <td>{{ routine.sixth_period }}</td>
+		    {% endif %}
+		    {% if routine.afternoon_lab %}
+		  <td colspan="3" class="text-center">{{ routine.seventh_period }}</td>
+		  	{% else %}
+		  <td>{{ routine.seventh_period }}</td>
+		  <td>{{ routine.eighth_period }}</td>
+		  <td>{{ routine.ninth_period }}</td>
+		    {% endif %}
+		</tr>
+		</tbody>
+	</table>
+	{% endfor %}
 {% endblock content %}
