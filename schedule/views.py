@@ -9,6 +9,16 @@ def ScheduleView(request):
 	}
 
 	#finding which day is present day and showing the routine according to that
+	routine = get_routine(str(day))
+	context["routine"] = routine
+
+	#finding all the remaining day schedule excluding the present day
+	remaining_routine = Routine.objects.exclude(day=day)
+	context["remaining_routine"] = remaining_routine
+
+	return render(request,'schedule.html',context)
+
+def get_routine(day):
 	if str(day) == "A":
 		routine=Routine.objects.get(day="A")
 	elif str(day) == "B":
@@ -19,11 +29,5 @@ def ScheduleView(request):
 		routine=Routine.objects.get(day="D")
 	elif str(day) == "E":
 		routine=Routine.objects.get(day="E")
-	context["routine"] = routine
-
-	#finding all the remaining day schedule excluding the present day
-	remaining_routine = Routine.objects.exclude(day=day)
-	context["remaining_routine"] = remaining_routine
-
-	return render(request,'schedule.html',context)
+	return routine
 

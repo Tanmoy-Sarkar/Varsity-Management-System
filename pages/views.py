@@ -1,5 +1,18 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from schedule.models import Routine,Schedule
+from schedule.views import get_routine
 # Create your views here.
 
-class HomePageView(TemplateView):
-	template_name = 'home.html'
+def HomePageView(request):
+	day = Schedule.objects.all()[0]
+	context = {
+		"day":day,
+	}
+	routine = get_routine(str(day))
+	context["routine"] = routine
+
+	return render(request,'home.html',context)
+
+
+
+
