@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models import When
 from django.urls import reverse
 # Create your models here.
 class Schedule(models.Model):

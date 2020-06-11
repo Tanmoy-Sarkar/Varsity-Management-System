@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'ClassNotice.apps.ClassnoticeConfig',
     'academicnotice.apps.AcademicnoticeConfig',
     'schedule.apps.ScheduleConfig',
+    'Assignments',
     #3rd party apps
     'crispy_forms',
     'django.contrib.admin',

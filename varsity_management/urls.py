@@ -25,5 +25,6 @@ urlpatterns = [
     path('class_notice/',include('ClassNotice.urls')),
     path('academic_notice/',include('academicnotice.urls')),
     path('schedule/',include('schedule.urls')),
+    path('assignments/',include('Assignments.urls')),
 
 ]

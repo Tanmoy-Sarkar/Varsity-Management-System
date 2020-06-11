@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Assignments{% endblock title %}
+
+{% block content %}
+  {% for assignment in object_list %}
+    <div class="card">
+      <div class="card-header">{{ assignment.subject }}</div>
+      <div class="card-body">
+        
+        <h6 class="card-subtitle mb-2 text-muted">Given By {{ assignment.teacher }}</h6>
+          <p class="card-text">Topic: {{assignment.topics}} </p>
+          
+      </div>
+      <div class="card-footer text-muted">
+        Due Date:{{ assignment.due_date }}
+      </div>
+    </div>
+  {% endfor %}
+{% endblock content %}
