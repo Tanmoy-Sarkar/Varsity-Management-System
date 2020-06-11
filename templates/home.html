@@ -53,7 +53,7 @@
 			<div class="container-fluid">
 			<div class="row flex-row">
 			{% for academic_notice in academic_notices|slice:":4" %}
-			<div class="col-3">
+			<div class="col-lg-3 col-sm-12">
             <div class="card">
             	<div class="card-body">
             		<h5 class="card-title">{{ academic_notice.title }}</h5>
@@ -63,9 +63,7 @@
         	</div>
         	</div>
 			{% endfor %}
-
-				
-			
+	
 			</div>
 			</div>
 			</div>
@@ -73,7 +71,7 @@
 			<div class="container-fluid">
 			<div class="row flex-row">
 			{% for academic_notice in academic_notices|slice:"4:8" %}
-			<div class="col-3">
+			<div class="col-lg-3 col-sm-12">
             <div class="card">
             	<div class="card-body">
             		<h5 class="card-title">{{ academic_notice.title }}</h5>
@@ -105,7 +103,7 @@
 			<div class="container-fluid">
 			<div class="row flex-row">
 			{% for class_notice in class_notices|slice:":4" %}
-			<div class="col-3">
+			<div class="col-lg-3 col-sm-12">
             <div class="card">
             	<div class="card-body">
             		<h5 class="card-title">{{ class_notice.title }}</h5>
@@ -116,8 +114,6 @@
         	</div>
 			{% endfor %}
 
-				
-			
 			</div>
 			</div>
 			</div>
@@ -125,7 +121,7 @@
 			<div class="container-fluid">
 			<div class="row flex-row">
 			{% for class_notice in class_notices|slice:"4:8" %}
-			<div class="col-3">
+			<div class="col-lg-3 col-sm-12">
             <div class="card">
             	<div class="card-body">
             		<h5 class="card-title">{{ class_notice.title }}</h5>
@@ -146,6 +142,29 @@
 					<span class="carousel-control-next-icon"></span>
 				</a>		
 	</div>
+
+	<!--Assignments Section-->
+
+	<h2>Assignments</h2>
+	<div class="container-fluid">
+	<div class="row">
+	  {% for assignment in assignments %}
+
+	<div class="col-lg-3 col-sm-12">
+    <div class="card">
+      <div class="card-header font-weight-bold">{{ assignment.subject }}</div>
+      <div class="card-body">
+        
+        <h6 class="card-subtitle mb-2 text-muted">Given By {{ assignment.teacher }}</h6>
+          <p class="card-text">Topic: {{assignment.topics}} </p>
+          
+      </div>
+      <div class="card-footer text-muted bg-dark">
+        Due Date:{{ assignment.due_date }}
+      </div>
+    </div>
+  		{% endfor %}
+	</div>
+	</div>
 			
-	
 {% endblock content %}

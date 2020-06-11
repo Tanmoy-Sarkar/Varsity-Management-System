@@ -28,6 +28,9 @@
 		  <li class="nav-item">
 		    <a class="nav-link" href="{% url 'class_notice_list' %}">Class Notice</a>
 		  </li>
+		  <li class="nav-item">
+		  	<a class="nav-link" href="{% url 'assignment_list' %}">Assignments</a>
+		  </li>
 	{% if user.is_authenticated %}
 			<li class="nav-item">
 				<a href="#" class="nav-link dropdown-toggle" id="studentmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>

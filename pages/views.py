@@ -3,6 +3,7 @@ from schedule.models import Routine,Schedule
 from schedule.views import get_routine
 from academicnotice.models import AcademicNotice
 from ClassNotice.models import ClassNotice
+from Assignments.models import Assignments
 # Create your views here.
 
 def HomePageView(request):
@@ -18,6 +19,9 @@ def HomePageView(request):
 
 	class_notices = ClassNotice.objects.all()
 	context["class_notices"] = class_notices
+
+	assignments = Assignments.objects.all()[:4]
+	context["assignments"] = assignments
 
 	return render(request,'home.html',context)
 
