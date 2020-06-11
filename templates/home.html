@@ -42,5 +42,110 @@
 		</tr>
 		</tbody>
 	</table>
+
+		<!--Latest Academic Notices--> 
+
+	<h2>Latest Academic Notices</h2>		
+	<div id="inam1" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			
+			<div class="carousel-item active">
+			<div class="container-fluid">
+			<div class="row flex-row">
+			{% for academic_notice in academic_notices|slice:":4" %}
+			<div class="col-3">
+            <div class="card">
+            	<div class="card-body">
+            		<h5 class="card-title">{{ academic_notice.title }}</h5>
+            		 <p class="card-text">{{ academic_notice.body }}</p>
+            		 <p class="card-footer">{{ academic_notice.author }} {{ academic_notice.date }}</p>
+            	</div>
+        	</div>
+        	</div>
+			{% endfor %}
+
+				
+			
+			</div>
+			</div>
+			</div>
+			<div class="carousel-item">
+			<div class="container-fluid">
+			<div class="row flex-row">
+			{% for academic_notice in academic_notices|slice:"4:8" %}
+			<div class="col-3">
+            <div class="card">
+            	<div class="card-body">
+            		<h5 class="card-title">{{ academic_notice.title }}</h5>
+            		 <p class="card-text">{{ academic_notice.body }}</p>
+            		 <p class="card-footer">{{ academic_notice.author }} {{ academic_notice.date }}</p>
+            	</div>
+        	</div>
+        	</div>
+			{% endfor %}
+			</div>
+			</div>
+			</div>	
+		</div>
+				<a href="#inam1" class="carousel-control-prev" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a href="#inam1" class="carousel-control-next" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>		
+	</div>
+
+		<!--Latest Class Notices-->
+
+	<h2>Latest Class Notices</h2>		
+	<div id="inam2" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			
+			<div class="carousel-item active">
+			<div class="container-fluid">
+			<div class="row flex-row">
+			{% for class_notice in class_notices|slice:":4" %}
+			<div class="col-3">
+            <div class="card">
+            	<div class="card-body">
+            		<h5 class="card-title">{{ class_notice.title }}</h5>
+            		 <p class="card-text">{{ class_notice.body }}</p>
+            		 <p class="card-footer">{{ class_notice.author }} {{ class_notice.date }}</p>
+            	</div>
+        	</div>
+        	</div>
+			{% endfor %}
+
+				
+			
+			</div>
+			</div>
+			</div>
+			<div class="carousel-item">
+			<div class="container-fluid">
+			<div class="row flex-row">
+			{% for class_notice in class_notices|slice:"4:8" %}
+			<div class="col-3">
+            <div class="card">
+            	<div class="card-body">
+            		<h5 class="card-title">{{ class_notice.title }}</h5>
+            		 <p class="card-text">{{ class_notice.body }}</p>
+            		 <p class="card-footer">{{ class_notice.author }} {{ class_notice.date }}</p>
+            	</div>
+        	</div>
+        	</div>
+			{% endfor %}
+			</div>
+			</div>
+			</div>	
+		</div>
+				<a href="#inam2" class="carousel-control-prev" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a href="#inam2" class="carousel-control-next" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>		
+	</div>
+			
 	
 {% endblock content %}
