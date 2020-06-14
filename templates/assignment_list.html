@@ -3,9 +3,12 @@
 {% block title %}Assignments{% endblock title %}
 
 {% block content %}
+
   {% for assignment in object_list %}
+ 
+ 
     <div class="card">
-      <div class="card-header font-weight-bold">{{ assignment.subject }}</div>
+      <div class="card-header font-weight-bold" >{{ assignment.subject }}</div>
       <div class="card-body">
         
         <h6 class="card-subtitle mb-2 text-muted">Given By {{ assignment.teacher }}</h6>
@@ -16,5 +19,10 @@
         Due Date:{{ assignment.due_date }}
       </div>
     </div>
+  
+
+</br>
+
+
   {% endfor %}
 {% endblock content %}

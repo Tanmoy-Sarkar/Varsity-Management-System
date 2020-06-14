@@ -42,9 +42,10 @@
 		</tr>
 		</tbody>
 	</table>
+	
+	
 
 		<!--Latest Academic Notices--> 
-
 	<h2>Latest Academic Notices</h2>		
 	<div id="inam1" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
@@ -55,11 +56,11 @@
 			{% for academic_notice in academic_notices|slice:":4" %}
 			<div class="col-lg-3 col-sm-12">
             <div class="card">
+      			<div class="card-header font-weight-bold">{{ academic_notice.title }}</div>
             	<div class="card-body">
-            		<h5 class="card-title">{{ academic_notice.title }}</h5>
-            		 <p class="card-text">{{ academic_notice.body }}</p>
-            		 <p class="card-footer">{{ academic_notice.author }} {{ academic_notice.date }}</p>
+            		<p class="card-text">{{ academic_notice.body }}</p>
             	</div>
+            	<div class="card-footer text-muted bg-dark">{{ academic_notice.author }} {{ academic_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -73,11 +74,11 @@
 			{% for academic_notice in academic_notices|slice:"4:8" %}
 			<div class="col-lg-3 col-sm-12">
             <div class="card">
+      			<div class="card-header font-weight-bold">{{ academic_notice.title }}</div>
             	<div class="card-body">
-            		<h5 class="card-title">{{ academic_notice.title }}</h5>
-            		 <p class="card-text">{{ academic_notice.body }}</p>
-            		 <p class="card-footer">{{ academic_notice.author }} {{ academic_notice.date }}</p>
+            		<p class="card-text">{{ academic_notice.body }}</p>
             	</div>
+            	<div class="card-footer text-muted bg-dark">{{ academic_notice.author }} {{ academic_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -92,7 +93,7 @@
 					<span class="carousel-control-next-icon"></span>
 				</a>		
 	</div>
-
+	
 		<!--Latest Class Notices-->
 
 	<h2>Latest Class Notices</h2>		
@@ -101,15 +102,15 @@
 			
 			<div class="carousel-item active">
 			<div class="container-fluid">
-			<div class="row flex-row">
+			<div class="row">
 			{% for class_notice in class_notices|slice:":4" %}
 			<div class="col-lg-3 col-sm-12">
-            <div class="card">
+            <div class="card custom-card" id="custom-card">
+      			<div class="card-header font-weight-bold">{{ class_notice.title }}</div>
             	<div class="card-body">
-            		<h5 class="card-title">{{ class_notice.title }}</h5>
-            		 <p class="card-text">{{ class_notice.body }}</p>
-            		 <p class="card-footer">{{ class_notice.author }} {{ class_notice.date }}</p>
+            		<p class="card-text">{{ class_notice.body }}</p>
             	</div>
+            	<div class="card-footer text-muted bg-dark">{{ class_notice.author }} {{ class_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -123,11 +124,11 @@
 			{% for class_notice in class_notices|slice:"4:8" %}
 			<div class="col-lg-3 col-sm-12">
             <div class="card">
+      			<div class="card-header font-weight-bold">{{ class_notice.title }}</div>
             	<div class="card-body">
-            		<h5 class="card-title">{{ class_notice.title }}</h5>
-            		 <p class="card-text">{{ class_notice.body }}</p>
-            		 <p class="card-footer">{{ class_notice.author }} {{ class_notice.date }}</p>
+            		<p class="card-text">{{ class_notice.body }}</p>
             	</div>
+            	<div class="card-footer text-muted bg-dark">{{ class_notice.author }} {{ class_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -146,8 +147,8 @@
 	<!--Assignments Section-->
 
 	<h2>Assignments</h2>
-	<div class="container-fluid">
 	<div class="row">
+	
 	  {% for assignment in assignments %}
 
 	<div class="col-lg-3 col-sm-12">
@@ -163,8 +164,9 @@
         Due Date:{{ assignment.due_date }}
       </div>
     </div>
+    </div>
   		{% endfor %}
-	</div>
-	</div>
-			
+  	
+  </div>
+	
 {% endblock content %}
