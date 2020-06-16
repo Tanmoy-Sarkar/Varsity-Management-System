@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2 class="text-center">Today is {{ day }} day</h2>
+    <h2 class="text-center mt-4 mb-4">Today is {{ day }} day</h2>
 
- 	<table class="table table-bordered table-dark table-responsive">
+ 	<table class="table table-bordered table-responsive-sm">
 		<thead>
 		<tr>
 		  <th scope="col">First Period</th>
@@ -44,8 +44,8 @@
 		</tbody>
 	</table>
 	{% for routine in remaining_routine %}
-	<h2>{{ routine.day }} Day</h2>
-	<table class="table table-bordered table-dark table-responsive">
+	<h2 class="text-center mt-4 mb-4">{{ routine.day }} Day</h2>
+	<table class="table table-bordered table-responsive-sm">
 		<thead>
 		<tr>
 		  <th scope="col">First Period</th>

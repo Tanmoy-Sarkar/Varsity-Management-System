@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Home {% endblock title %}
 {% block content %}
-	<h2 class="text-center">Today is {{ day }} day</h2>
- 	<table class="table table-bordered table-dark table-responsive">
+	<div class="container-fluid mb-6 mt-2 ">
+	<h4 class="text-center mb-3 custom-header">Today is {{ day }} day</h2>
+ 	<table class="table table-bordered table-responsive-sm">
 		<thead>
 		<tr>
 		  <th scope="col">First Period</th>
@@ -42,11 +43,12 @@
 		</tr>
 		</tbody>
 	</table>
+	</div>
 	
 	
 
 		<!--Latest Academic Notices--> 
-	<h2>Latest Academic Notices</h2>		
+	<h2 class="mt-4 mb-4">Latest Academic Notices</h2>		
 	<div id="inam1" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			
@@ -55,12 +57,12 @@
 			<div class="row flex-row">
 			{% for academic_notice in academic_notices|slice:":4" %}
 			<div class="col-lg-3 col-sm-12">
-            <div class="card">
+            <div class="card ml-auto mr-auto">
       			<div class="card-header font-weight-bold">{{ academic_notice.title }}</div>
             	<div class="card-body">
             		<p class="card-text">{{ academic_notice.body }}</p>
             	</div>
-            	<div class="card-footer text-muted bg-dark">{{ academic_notice.author }} {{ academic_notice.date }}</div>
+            	<div class="card-footer text-muted ">{{ academic_notice.author }} {{ academic_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -73,12 +75,12 @@
 			<div class="row flex-row">
 			{% for academic_notice in academic_notices|slice:"4:8" %}
 			<div class="col-lg-3 col-sm-12">
-            <div class="card">
+            <div class="card ml-auto mr-auto">
       			<div class="card-header font-weight-bold">{{ academic_notice.title }}</div>
             	<div class="card-body">
             		<p class="card-text">{{ academic_notice.body }}</p>
             	</div>
-            	<div class="card-footer text-muted bg-dark">{{ academic_notice.author }} {{ academic_notice.date }}</div>
+            	<div class="card-footer text-muted">{{ academic_notice.author }} {{ academic_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -87,16 +89,16 @@
 			</div>	
 		</div>
 				<a href="#inam1" class="carousel-control-prev" data-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
 				</a>
 				<a href="#inam1" class="carousel-control-next" data-slide="next">
-					<span class="carousel-control-next-icon"></span>
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
 				</a>		
 	</div>
 	
 		<!--Latest Class Notices-->
 
-	<h2>Latest Class Notices</h2>		
+	<h2 class="mt-4 mb-4">Latest Class Notices</h2>		
 	<div id="inam2" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			
@@ -105,12 +107,12 @@
 			<div class="row">
 			{% for class_notice in class_notices|slice:":4" %}
 			<div class="col-lg-3 col-sm-12">
-            <div class="card custom-card" id="custom-card">
+            <div class="card ml-auto mr-auto">
       			<div class="card-header font-weight-bold">{{ class_notice.title }}</div>
             	<div class="card-body">
             		<p class="card-text">{{ class_notice.body }}</p>
             	</div>
-            	<div class="card-footer text-muted bg-dark">{{ class_notice.author }} {{ class_notice.date }}</div>
+            	<div class="card-footer text-muted ">{{ class_notice.author }} {{ class_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -123,12 +125,12 @@
 			<div class="row flex-row">
 			{% for class_notice in class_notices|slice:"4:8" %}
 			<div class="col-lg-3 col-sm-12">
-            <div class="card">
+            <div class="card ml-auto mr-auto">
       			<div class="card-header font-weight-bold">{{ class_notice.title }}</div>
             	<div class="card-body">
             		<p class="card-text">{{ class_notice.body }}</p>
             	</div>
-            	<div class="card-footer text-muted bg-dark">{{ class_notice.author }} {{ class_notice.date }}</div>
+            	<div class="card-footer text-muted ">{{ class_notice.author }} {{ class_notice.date }}</div>
         	</div>
         	</div>
 			{% endfor %}
@@ -137,22 +139,22 @@
 			</div>	
 		</div>
 				<a href="#inam2" class="carousel-control-prev" data-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
 				</a>
 				<a href="#inam2" class="carousel-control-next" data-slide="next">
-					<span class="carousel-control-next-icon"></span>
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
 				</a>		
 	</div>
 
 	<!--Assignments Section-->
 
-	<h2>Assignments</h2>
+	<h2 class="mt-4 mb-4">Assignments</h2>
 	<div class="row">
 	
 	  {% for assignment in assignments %}
 
 	<div class="col-lg-3 col-sm-12">
-    <div class="card">
+    <div class="card ml-auto mr-auto">
       <div class="card-header font-weight-bold">{{ assignment.subject }}</div>
       <div class="card-body">
         
@@ -160,7 +162,7 @@
           <p class="card-text">Topic: {{assignment.topics}} </p>
           
       </div>
-      <div class="card-footer text-muted bg-dark">
+      <div class="card-footer text-muted">
         Due Date:{{ assignment.due_date }}
       </div>
     </div>
