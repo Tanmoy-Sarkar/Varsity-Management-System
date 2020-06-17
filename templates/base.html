@@ -16,28 +16,30 @@
 	<script src="https://kit.fontawesome.com/f59fb37702.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark  custom-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark active  custom-navbar">
 		<a class="navbar-brand ml-lg-5" href="{% url 'home' %}">ETE 16</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav ml-auto mr-4">
-		  <li class="nav-item active">
-		    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+			{% with url_name=request.resolver_match.url_name %}
+		  <li class="nav-item">
+		    <a class="nav-link {% if url_name == 'home' %} active{% endif %} "href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="{% url 'schedule' %}">Schedule</a>
+		    <a class="nav-link {% if url_name == 'schedule' %} active{% endif %}" href="{% url 'schedule' %}">Schedule</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="{% url 'academic_notice' %}">Academic Notice</a>
+		    <a class="nav-link {% if url_name == 'academic_notice' %} active{% endif %}" href="{% url 'academic_notice' %}">Academic Notice</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="{% url 'class_notice_list' %}">Class Notice</a>
+		    <a class="nav-link {% if url_name == 'class_notice_list' %} active{% endif %}" href="{% url 'class_notice_list' %}">Class Notice</a>
 		  </li>
 		  <li class="nav-item">
-		  	<a class="nav-link" href="{% url 'assignment_list' %}">Assignments</a>
+		  	<a class="nav-link {% if url_name == 'assignment_list' %} active{% endif %} " href="{% url 'assignment_list' %}">Assignments</a>
 		  </li>
+		  {% endwith %}
 	{% if user.is_authenticated %}
 			<li class="nav-item">
 				<a href="#" class="nav-link dropdown-toggle" id="studentmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
@@ -66,9 +68,7 @@
 
 	{% endblock content %}
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	
 
 <!-- Footer -->
 	<section id="footer" class="mt-4">
@@ -97,6 +97,10 @@
 		</div>
 	</section>
 	<!-- ./Footer -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
 </html>

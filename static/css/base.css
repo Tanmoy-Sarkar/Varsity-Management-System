@@ -35,6 +35,31 @@ table.table-bordered > tbody > tr > td {
 }
 .custom-header {
     color: #18AD7C;
+    animation: move 3s;
+  -webkit-animation: move 3s;
+}
+@keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+            
+@-webkit-keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 table thead tr {
     background-color:; ;
@@ -46,8 +71,8 @@ tr{
     width: 20rem;
     height: 15rem;
     font-family: 'Lato', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 .card-title i:hover{
@@ -193,6 +218,7 @@ ul.navbar-nav .nav-item:after {
 .navbar-nav .nav-item:hover:after {
     width: 100%;
     background:white;
+    border-radius: 100px;
 }
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
@@ -200,4 +226,21 @@ ul.navbar-nav .nav-item:after {
     .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
     .navbar .dropdown-menu.fade-up{ top:180%;  }
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-}       
+} 
+  .navbar-nav .nav-item > a.active {
+    width: 120px;
+    background: white;
+    border-radius: 100px ;
+    color:  #18AD7C !important;
+    text-align: center;
+    font-weight: bolder;
+}
+#studentmenu {
+    width: 120px;
+    background: white;
+    border-radius: 100px ;
+    color:  #18AD7C !important;
+    text-align: center;
+    font-weight: bolder;
+
+}
