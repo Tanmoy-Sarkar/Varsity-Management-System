@@ -9,19 +9,22 @@ h2 {
     font-family: 'Arvo', serif;
     color : #18AD7C;
 }
+
 .custom-navbar {
     min-height: 70px;
     background: #18AD7C;
+
 }
 .navbar-brand {
     font-family: 'Permanent Marker', cursive ;
     font-size: 30px !important;
+    padding-bottom: auto !important;
 }
 .navbar-nav {
     font-family: 'Permanent Marker', cursive;
     font-family: 'PT Serif', serif;
     font-family: 'Ubuntu', sans-serif;
-
+    
 }
 .table {
     background-color: white;
@@ -118,6 +121,19 @@ tr{
     background: #09b388 ;
     color: white  !important ;
 }
+.custom-card {
+    width: 80%;
+    height: 15rem;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+.custom-card .card-author {
+    color: white;
+}
 .carousel-control-prev i {
     color: #016b50 ;
     font-size: 2.5rem;
@@ -204,9 +220,18 @@ section .section-title {
     font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
     padding: 0px !important;
+
 }
 ul.navbar-nav li.nav-item{
   margin: 0 20px;
+}
+.signup{
+  color:#18AD7C !important;
+  background: white !important;
+  border-radius: 80px !important ;
+  width: 80px ;
+  font-weight: bolder !important;
+
 }
 ul.navbar-nav .nav-item:after {
     content: '';
@@ -215,10 +240,13 @@ ul.navbar-nav .nav-item:after {
     width: 0;
     transition: width .5s ease, background-color .5s ease;
 }
-.navbar-nav .nav-item:hover:after {
+.navbar-nav .nav-item:not(.signedcustom):hover:after  {
     width: 100%;
     background:white;
     border-radius: 100px;
+}
+.signedcustom {
+    display: block;
 }
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
@@ -228,12 +256,13 @@ ul.navbar-nav .nav-item:after {
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
 } 
   .navbar-nav .nav-item > a.active {
-    width: 120px;
+    width: 140px;
     background: white;
     border-radius: 100px ;
     color:  #18AD7C !important;
     text-align: center;
     font-weight: bolder;
+    display: block;
 }
 #studentmenu {
     width: 120px;
@@ -243,4 +272,13 @@ ul.navbar-nav .nav-item:after {
     text-align: center;
     font-weight: bolder;
 
+}
+
+#password-change {
+    color: #18AD7C ;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Ubuntu', sans-serif;
+    
+    margin-top: 22px;
 }

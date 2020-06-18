@@ -31,7 +31,7 @@
 		    <a class="nav-link {% if url_name == 'schedule' %} active{% endif %}" href="{% url 'schedule' %}">Schedule</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link {% if url_name == 'academic_notice' %} active{% endif %}" href="{% url 'academic_notice' %}">Academic Notice</a>
+		    <a class="nav-link {% if url_name == 'academic_notice' %} active{% endif %}" href="{% url 'academic_notice' %}">Academic News</a>
 		  </li>
 		  <li class="nav-item">
 		    <a class="nav-link {% if url_name == 'class_notice_list' %} active{% endif %}" href="{% url 'class_notice_list' %}">Class Notice</a>
@@ -51,11 +51,12 @@
 			</li>
 		
 	{% else %}
+			<li class="nav-item form-inline signedcustom">
+				<h6 class="mt-auto mb-auto ml-auto mr-2 border text-white pl-0 pr-0">You are not logged in</h6>
+			<a href="{% url 'login' %}" class="btn nav-link mr-1 signup">Log In</a>
+			<a href="{%url 'signup'%}" class="btn nav-link signup">Sign Up</a>
 			
-			<form class="form-inline ml-auto bg-primary">You are not logged in
-			<a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
-			<a href="{%url 'signup'%}" class="btn btn-primary ml-2">Sign Up</a>
-			</form>
+			</li>
 
 	
 	{% endif %}
