@@ -3,6 +3,8 @@
 {% block content %}
     <h2 class="text-center mt-4 mb-4">Today is {{ day }} day</h2>
 
+     <!--Current Day Table -->
+
  	<table class="table table-bordered table-responsive-sm">
 		<thead>
 		<tr>
@@ -43,6 +45,9 @@
 		</tr>
 		</tbody>
 	</table>
+
+	<!--Table for other days -->
+
 	{% for routine in remaining_routine %}
 	<h2 class="text-center mt-4 mb-4">{{ routine.day }} Day</h2>
 	<table class="table table-bordered table-responsive-sm">
@@ -85,5 +90,6 @@
 		</tr>
 		</tbody>
 	</table>
+	
 	{% endfor %}
 {% endblock content %}
