@@ -1,1 +1,1 @@
-web: gunicorn varsity_management.wsgi --log-file -
+"web: gunicorn varsity_management.wsgi --log-file -" 
